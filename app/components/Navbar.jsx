@@ -2,6 +2,8 @@
 'use client'
 import { useState } from 'react';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,21 +13,21 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-blue-600">
+            <Link href="/" className="text-2xl font-bold text-blue-600" smooth={true} duration={500}>
               MyPortfolio
             </Link>
           </div>
           <div className="hidden md:flex space-x-4">
-            <Link href="/" className="text-gray-700 hover:text-blue-600">
+            <Link href="/" className="text-gray-700 hover:text-blue-600" smooth={true} duration={500}>
               Home
             </Link>
-            <Link href="#about" className="text-gray-700 hover:text-blue-600">
+            <Link href="#about" className="text-gray-700 hover:text-blue-600" smooth={true} duration={500}>
               About
             </Link>
-            <Link href="#projects" className="text-gray-700 hover:text-blue-600">
+            <Link href="#projects" className="text-gray-700 hover:text-blue-600" smooth={true} duration={500}>
               Projects
             </Link>
-            <Link href="#contact" className="text-gray-700 hover:text-blue-600">
+            <Link href="#contact" className="text-gray-700 hover:text-blue-600"smooth={true} duration={500}>
               Contact
             </Link>
           </div>
