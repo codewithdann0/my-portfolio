@@ -24,12 +24,16 @@ export default function Navbar() {
             <Link href="#about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
               About
             </Link>
+            <Link href="#skills" className="text-gray-700 dark:text-gray-300 hover:text-blue-600"> {/* Added Skills link */}
+              Skills
+            </Link>
             <Link href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
               Projects
             </Link>
             <Link href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
               Contact
             </Link>
+            
             <ThemeToggle  className="mr-2"/>
           </div>
           {/* Theme Toggle Button */}

@@ -7,6 +7,7 @@ import About from './components/About';
 import Projects from './components/Projects'
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Skills from './components/Skills';
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,6 +31,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+      <link
+                    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+                    rel="stylesheet"
+                />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -38,6 +45,7 @@ export default function RootLayout({
         <Navbar/>
         <Hero/>
         <About/>
+        <Skills />
         <Projects/>
         <Contact/>
         <Footer/>
