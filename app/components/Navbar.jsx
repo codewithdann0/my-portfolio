@@ -59,7 +59,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">
+            <Link href="#about" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">
               Home
             </Link>
             <Link href="#about" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">

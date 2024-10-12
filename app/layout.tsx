@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects'
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -38,6 +39,7 @@ export default function RootLayout({
         <About/>
         <Projects/>
         <Contact/>
+        <Footer/>
         {children}
       </body>
     </html>
