@@ -5,7 +5,6 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useState(false);
 
-  // Load initial theme preference from localStorage
   useEffect(() => {
     const isDark = localStorage.getItem('dark-mode') === 'true';
     setDarkMode(isDark);
@@ -28,7 +27,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      className="p-2 rounded-full bg-gray-200 dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
       aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
       aria-pressed={darkMode}
     >

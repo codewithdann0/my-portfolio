@@ -7,6 +7,26 @@ html {
 }
 /* globals.css */
 body {
+  @apply bg-white text-gray-800; /* Default light mode */
   transition: background-color 0.5s, color 0.5s;
 }
 
+body.dark {
+  @apply bg-gray-800 text-white; /* Dark mode styles */
+}
+
+a {
+  @apply text-blue-600; /* Default link color */
+}
+
+a:hover {
+  @apply text-blue-800; /* Hover color in light mode */
+}
+
+body.dark a {
+  @apply text-blue-400; /* Link color in dark mode */
+}
+
+body.dark a:hover {
+  @apply text-blue-300; /* Hover color in dark mode */
+}

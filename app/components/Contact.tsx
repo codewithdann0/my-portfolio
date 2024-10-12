@@ -1,4 +1,3 @@
-// app/components/Contact.tsx
 'use client';
 import { useState } from 'react';
 
@@ -60,9 +59,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-100">
+    <section id="contact" className="py-20 bg-gray-100 dark:bg-gray-900">
       <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">Contact Me</h2>
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Contact Me</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
@@ -70,7 +69,7 @@ export default function Contact() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            className="w-full p-3 border rounded"
+            className="w-full p-3 border rounded dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             aria-label="Your Name"
           />
           <input
@@ -79,7 +78,7 @@ export default function Contact() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full p-3 border rounded"
+            className="w-full p-3 border rounded dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             aria-label="Your Email"
           />
           <textarea
@@ -87,7 +86,7 @@ export default function Contact() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
-            className="w-full p-3 border rounded h-32"
+            className="w-full p-3 border rounded h-32 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             aria-label="Your Message"
           ></textarea>
 
