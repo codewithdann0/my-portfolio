@@ -5,3 +5,8 @@
 html {
   scroll-behavior: smooth;
 }
+/* globals.css */
+body {
+  transition: background-color 0.5s, color 0.5s;
+}
+
