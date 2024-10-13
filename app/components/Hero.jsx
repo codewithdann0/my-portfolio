@@ -37,7 +37,7 @@ export default function Hero() {
           className="text-xl font-semibold text-gray-800 dark:text-white"
           initial={{ opacity: 0 }}
           animate={{ opacity: 3 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          transition={{ duration: 5, ease: "easeInOut" }}
         >
           Full-Stack Developer
         </motion.p>
@@ -48,8 +48,8 @@ export default function Hero() {
           src="/img.jpg"
           alt="Profile"
           className="w-64 h-64 rounded-full mx-auto mb-4"
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 2 }}
           transition={{ duration: 2, ease: "easeInOut" }}
         />
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
