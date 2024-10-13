@@ -1,97 +1,85 @@
 "use client"; 
 import { motion } from "framer-motion";
-import { FaYoutube, FaLaptopCode } from "react-icons/fa";
+import Typewriter from "typewriter-effect";
+import { FaLaptopCode, FaArrowRight, FaYoutube, FaGithub, FaInstagram, FaTiktok, FaLinkedin } from "react-icons/fa";
+import Link from "next/link";
 
-const bounceTransition = {
-  y: {
-    duration: 0.4,
-    yoyo: Infinity,
-    ease: "easeOut"
-  }
+const fadeInAnimation = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 2, ease: "easeInOut" } }
 };
 
-const shakeTransition = {
-  rotate: {
-    duration: 0.2,
-    yoyo: Infinity,
-    ease: "easeInOut",
-    from: -10,
-    to: 10
-  }
-};
-
-export default function Hero() {  
+const Hero = () => {
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-center h-screen bg-gray-100 dark:bg-gray-900 text-center relative">
-
-      {/* Full-Stack Developer Icon with Title */}
-      <motion.div
-        className="absolute"
-        initial={{ y: -1000 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 120 }}
-        style={{ left: "15%" }}
-      >
-        <FaLaptopCode className="text-green-500 text-6xl" />
-        <motion.p
-          className="text-xl font-semibold text-gray-800 dark:text-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 3 }}
-          transition={{ duration: 5, ease: "easeInOut" }}
+    <section className="flex flex-col items-center justify-center h-screen px-6 bg-gray-100 dark:bg-gray-900 text-center relative">
+      <div className="flex flex-row items-center justify-center gap-8">
+        {/* Full-Stack Developer Text - Left */}
+        <motion.div
+          className="flex flex-col items-start gap-4 text-left"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInAnimation}
         >
-          Full-Stack Developer
-        </motion.p>
-      </motion.div>
+          <FaLaptopCode className="text-green-500 text-6xl lg:text-8xl" />
+          <motion.div className="text-6xl md:text-5xl lg:text-6xl font-extrabold text-gray-800 dark:text-white leading-tight whitespace-nowrap">
+            <Typewriter
+              options={{
+                strings: ["Full-Stack Developer"],
+                autoStart: true,
+                loop: true,
+              }}
+            />
+          </motion.div>
+        </motion.div>
 
-      <div className="relative max-w-2xl text-center">
-        <motion.img
-          src="/img.jpg"
-          alt="Profile"
-          className="w-64 h-64 rounded-full mx-auto mb-4"
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 2 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
-        />
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">
-          Hi, I'm Daniel Tigistu
-        </h1>
-        <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-6">
-          I'm a passionate software developer with experience in building web applications.
-        </p>
-        
-        {/* Download Resume Button with Bounce and Rotate Effect */}
-        <motion.a
-          href="../public/resume.pdf"
-          className="inline-block px-6 py-3 bg-blue-600 dark:bg-blue-700 text-white rounded-md hover:bg-blue-700 dark:hover:bg-blue-600 transition duration-300"
-          whileHover={{
-            scale: [1, 1.5, 1.2],
-            rotate: [0, 10, -10, 0]
-          }}
-          whileTap={{ scale: 0.8 }}
-          transition={{ type: "spring", stiffness: 100, damping: 10 }}
+        {/* Content Creator Text with YouTube Icon - Above Right */}
+        <motion.div
+          className="flex flex-col items-start text-left"
+          initial="hidden"
+          animate="visible"
+          variants={fadeInAnimation}
         >
-          Download Resume
-        </motion.a>
+          <motion.div className="flex items-center gap-2">
+            <Link href="https://youtube.com" target="_blank">
+              <FaYoutube className="text-red-600 text-6xl lg:text-8xl" />
+            </Link>
+            <span className="text-lg lg:text-xl font-bold text-gray-800 dark:text-white">
+              Content Creator
+            </span>
+          </motion.div>
+          <motion.div className="flex items-center gap-2 mt-2">
+            <FaArrowRight className="text-gray-800 dark:text-white text-2xl transform rotate-90" />
+            <motion.p
+              className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-400"
+            >
+              When I'm not coding, I'm probably creating content, honing my skills, and dreaming big. Let's build something amazing together!
+            </motion.p>
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* Content Creator Icon with Title */}
-      <motion.div
-        className="absolute"
-        initial={{ y: 1000 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 120 }}
-        style={{ right: "15%" }}
-      >
-        <FaYoutube className="text-red-600 text-6xl" />
-        <motion.p
-          className="text-xl font-semibold text-gray-800 dark:text-white"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
-        >
-          Content Creator
-        </motion.p>
-      </motion.div>
+      {/* Social Media Links at the Bottom Center */}
+      <div className="absolute bottom-8 flex gap-4 flex-wrap justify-center">
+        {[
+          { name: "GitHub", url: "https://github.com", icon: <FaGithub /> },
+          { name: "Instagram", url: "https://instagram.com", icon: <FaInstagram /> },
+          { name: "YouTube", url: "https://youtube.com", icon: <FaYoutube /> },
+          { name: "TikTok", url: "https://tiktok.com", icon: <FaTiktok /> },
+          { name: "LinkedIn", url: "https://linkedin.com", icon: <FaLinkedin /> },
+        ].map((link) => (
+          <Link
+            key={link.name}
+            href={link.url}
+            target="_blank"
+            className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full text-sm transform transition-transform hover:scale-110"
+          >
+            {link.icon}
+            {link.name}
+          </Link>
+        ))}
+      </div>
     </section>
   );
-}
+};
+
+export default Hero;
