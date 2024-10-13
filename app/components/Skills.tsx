@@ -1,38 +1,39 @@
-// components/Skills.tsx
 "use client";
 import { motion } from 'framer-motion';
-
+import { FaPhp, FaJsSquare, FaPython, FaLaravel } from 'react-icons/fa'; // Correct imports
+import { FaGolang } from "react-icons/fa6";
+import { BiLogoCPlusPlus } from "react-icons/bi";
 export default function Skills() {
   const skillsList = [
     {
       title: "Golang",
-      description: "Proficient in ES6, asynchronous programming, and frameworks like React.",
-      imageUrl: "/images/javascript.png" // Path to your skill image
-    },
-    ,{
-      title: "C++",
-      description: "Proficient in ES6, asynchronous programming, and frameworks like React.",
-      imageUrl: "/images/javascript.png" // Path to your skill image
+      description: "Proficient in building scalable applications using Go.",
+      icon: <FaGolang className="w-12 h-12 mb-4" />, // React icon for Golang
     },
     {
-      title: "Php",
-      description: "Proficient in ES6, asynchronous programming, and frameworks like React.",
-      imageUrl: "/images/javascript.png" // Path to your skill image
+      title: "C++",
+      description: "Skilled in object-oriented programming and data structures.",
+      icon: <BiLogoCPlusPlus className="w-12 h-12 mb-4" />, // React icon for C++
+    },
+    {
+      title: "PHP",
+      description: "Experienced in building server-side applications with PHP.",
+      icon: <FaPhp className="w-12 h-12 mb-4" />, // React icon for PHP
     },
     {
       title: "JavaScript",
       description: "Proficient in ES6, asynchronous programming, and frameworks like React.",
-      imageUrl: "/images/javascript.png" // Path to your skill image
+      icon: <FaJsSquare className="w-12 h-12 mb-4" />, // Updated icon for JavaScript
     },
     {
-      title: "Pyhton",
+      title: "Python",
       description: "Experienced with data analysis, web development, and automation scripts.",
-      imageUrl: "/images/python.png" // Path to your skill image
+      icon: <FaPython className="w-12 h-12 mb-4" />, // React icon for Python
     },
     {
       title: "Laravel",
       description: "Knowledgeable in building RESTful APIs and MVC applications.",
-      imageUrl: "/images/laravel.png" // Path to your skill image
+      icon: <FaLaravel className="w-12 h-12 mb-4" />, // React icon for Laravel
     },
     // Add more skills as needed
   ];
@@ -58,7 +59,7 @@ export default function Skills() {
               exit={{ opacity: 0, x: 100 }} // Exit state
               transition={{ duration: 0.8, delay: index * 0.1 }} // Animation duration and delay for each skill
             >
-              <img src={skill.imageUrl} alt={skill.title} className="w-12 h-12 mb-4" /> {/* Skill image */}
+              {skill.icon} {/* Use the React icon instead of an image */}
               <h3 className="text-xl font-semibold">{skill.title}</h3>
               <p className="mt-2 text-gray-600 dark:text-gray-400">{skill.description}</p>
             </motion.div>
