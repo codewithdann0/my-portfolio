@@ -1,6 +1,7 @@
 // components/About.tsx
 "use client";
 import { motion } from 'framer-motion';
+import Typewriter from 'typewriter-effect';
 
 export default function About() {
   return (
@@ -12,14 +13,38 @@ export default function About() {
       exit={{ opacity: 0, y: 20 }} // Exit state
       transition={{ duration: 0.5 }} // Duration of the animation
     >
-      <div className="max-w-2xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">About Me</h2>
-        <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-          I am a software developer with a passion for creating dynamic and responsive web applications...
-        </p>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          In addition to my technical skills, I enjoy collaborating with teams and learning new technologies...
-        </p>
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center text-center md:text-left">
+        <div className="md:w-1/2 mb-4 md:mb-0">
+          <motion.img
+            src="/img.jpg" // Replace with your image path
+            alt="My Image"
+            className="w-80 h-80 rounded-xl mx-auto md:mx-0"
+            initial={{ y: -50 }}
+            animate={{ y: [0, -30, 0] }}
+            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }} // Infinite bounce effect
+          />
+        </div>
+        <div className="md:w-1/2">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-2">
+            About Me
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
+            <Typewriter
+              options={{
+                strings: ["Hi! I'm Daniel Tigistu, a 23-year-old, 4th-year software engineering student at Haramaya University. I started programming and web development three years ago, and it's been a thrilling journey. I have a passion for creating stunning websites for clients and my company, and I find immense satisfaction in building things from the ground up."],
+                autoStart: true,
+                loop: true,
+                delay: 50
+              }}
+            />
+          </p>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
+            My goal is to become a person who is loved by God and admired for my work. I'm confident in my ability to learn things quickly, and I thrive in team environments where communication is key. I'm pragmatic, reasonable, ambitious, and incredibly proud of my consistency and hard work. I firmly believe that dedication and perseverance will pay off in the end.
+          </p>
+          <p className="text-lg text-gray-600 dark:text-gray-400">
+            When I'm not coding, I'm probably creating content, honing my skills, and dreaming big. Let's build something amazing together!
+          </p>
+        </div>
       </div>
     </motion.section>
   );

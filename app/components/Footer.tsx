@@ -13,16 +13,16 @@ export default function Footer() {
               <FaLinkedin size={30} />
             </a>
             <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaInstagram size={30} />
+              <FaInstagram size={30} className='text-pink-600' />
             </a>
             <a href="https://www.youtube.com/c/yourchannel" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaYoutube size={30} />
+              <FaYoutube size={30}  className='text-red-600'/>
             </a>
             <a href="https://www.tiktok.com/@yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaTiktok size={30} />
+              <FaTiktok size={30}  className='text-black'/>
             </a>
             <a href="https://www.upwork.com/freelancers/~yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaSquareUpwork size={30} />
+              <FaSquareUpwork size={30}  className='text-green-600'/>
             </a>
           </div>
         </div>
