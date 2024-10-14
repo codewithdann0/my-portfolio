@@ -3,9 +3,15 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import ThemeToggle from './ThemeToggle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const variants = {
+    open: { opacity: 1, height: "auto" },
+    closed: { opacity: 0, height: 0 }
+  };
 
   return (
     <nav className="fixed w-full top-0 z-50">
@@ -14,7 +20,7 @@ export default function Navbar() {
           {/* Logo / Brand */}
           <Link href="/" className="text-2xl font-bold text-blue-600">
             {/* Logo or Brand Name */}
-            
+            MyPortfolio
           </Link>
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
@@ -59,22 +65,31 @@ export default function Navbar() {
         </div>
       </div>
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white dark:bg-gray-800">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
-              <Link
-                key={index}
-                href={`#${item.toLowerCase()}`}
-                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-md"
-              >
-                {item}
-              </Link>
-            ))}
-            <ThemeToggle />
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="md:hidden bg-white dark:bg-gray-800 overflow-hidden"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={variants}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          >
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
+                <Link
+                  key={index}
+                  href={`#${item.toLowerCase()}`}
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-md"
+                >
+                  {item}
+                </Link>
+              ))}
+              <ThemeToggle />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
