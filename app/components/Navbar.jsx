@@ -1,42 +1,39 @@
-// components/Navbar.tsx
-'use client'
+'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { Link as ScrollLink } from 'react-scroll';
+import { MdOutlineArrowOutward } from 'react-icons/md';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="fixed w-full top-0 z-50 ">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed w-full top-0 z-50">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-blue-600">
-              {/* Logo or Brand Name */}
-            </Link>
-          </div>
-          <div className="hidden md:flex flex-grow justify-center space-x-8">
-            <Link href="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
-              Home
-            </Link>
-            <Link href="#about" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
-              About
-            </Link>
-            <Link href="#skills" className="text-gray-700 dark:text-gray-300 hover:text-blue-600"> {/* Added Skills link */}
-              Skills
-            </Link>
-            <Link href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
-              Projects
-            </Link>
-            <Link href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-600">
-              Contact
-            </Link>
+          {/* Logo / Brand */}
+          <Link href="/" className="text-2xl font-bold text-blue-600">
+            {/* Logo or Brand Name */}
             
-            <ThemeToggle  className="mr-2"/>
+          </Link>
+          {/* Desktop Menu */}
+          <div className="hidden md:flex space-x-6">
+            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
+              <Link
+                key={index}
+                href={`#${item.toLowerCase()}`}
+                className="relative flex items-center text-gray-700 dark:text-gray-300 transition duration-300"
+              >
+                <span className="relative z-10">{item}</span>
+                <MdOutlineArrowOutward className="ml-1 text-base" />
+                <div className="absolute inset-0 bg-blue-100 dark:bg-gray-700 rounded-full scale-0 hover:scale-100 transition-transform duration-300 ease-in-out -z-1" />
+              </Link>
+            ))}
           </div>
-          {/* Theme Toggle Button */}
-          
+          {/* Theme Toggle */}
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
           {/* Mobile Menu Button */}
           <div className="-mr-2 flex md:hidden">
             <button
@@ -63,20 +60,17 @@ export default function Navbar() {
       </div>
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 ml-2">
-            <Link href="#" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">
-              Home
-            </Link>
-            <Link href="#about" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">
-              About
-            </Link>
-            <Link href="#projects" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">
-              Projects
-            </Link>
-            <Link href="#contact" className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100">
-              Contact
-            </Link>
+        <div className="md:hidden bg-white dark:bg-gray-800">
+          <div className="px-2 pt-2 pb-3 space-y-1">
+            {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
+              <Link
+                key={index}
+                href={`#${item.toLowerCase()}`}
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-md"
+              >
+                {item}
+              </Link>
+            ))}
             <ThemeToggle />
           </div>
         </div>
