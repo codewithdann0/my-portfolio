@@ -35,3 +35,14 @@ body.dark a {
 body.dark a:hover {
   @apply text-blue-300; /* Hover color in dark mode */
 }
+
+/* Hide scrollbar but keep functionality */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* WebKit (Chrome, Safari) */
+}
+
