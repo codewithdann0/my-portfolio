@@ -1,4 +1,3 @@
-// components/About.tsx
 "use client";
 import { motion } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
@@ -19,9 +18,10 @@ export default function About() {
             src="/img.jpg" // Replace with your image path
             alt="My Image"
             className="w-80 h-80 rounded-xl mx-auto md:mx-0"
-            initial={{ y: -50 }}
-            animate={{ y: [0, -30, 0] }}
-            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }} // Infinite bounce effect
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 2 }}
+            whileHover={{ scale: 1.1, rotate: 7 }}
           />
         </div>
         <div className="md:w-1/2">
