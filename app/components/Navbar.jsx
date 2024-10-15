@@ -1,16 +1,30 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import ThemeToggle from './ThemeToggle';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, useMotionValue, animate, stagger } from 'framer-motion';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const progress = useMotionValue(0);
 
-  const variants = {
-    open: { opacity: 1, height: "auto" },
-    closed: { opacity: 0, height: 0 }
+  useEffect(() => {
+    const sequence = [
+      ["ul", { opacity: 1 }, { duration: 0.5 }],
+      [progress, 100, { ease: "easeInOut" }]
+    ];
+    animate(sequence);
+  }, [progress]);
+
+  const ulVariants = {
+    open: { opacity: 1 },
+    closed: { opacity: 0 }
+  };
+
+  const liVariants = {
+    open: { x: [-100, 0], transition: { delay: stagger(0.1) }},
+    closed: { x: 0 }
   };
 
   return (
@@ -20,15 +34,15 @@ export default function Navbar() {
           {/* Logo / Brand */}
           <Link href="/" className="text-2xl font-bold text-blue-600">
             {/* Logo or Brand Name */}
-            MyPortfolio
+            
           </Link>
           {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-20">
             {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
               <Link
                 key={index}
                 href={`#${item.toLowerCase()}`}
-                className="relative flex items-center text-gray-700 dark:text-gray-300 transition duration-300"
+                className="relative flex items-center text-gray-700 dark:text-white transition duration-300"
               >
                 <span className="relative z-10">{item}</span>
                 <MdOutlineArrowOutward className="ml-1 text-base" />
@@ -65,31 +79,28 @@ export default function Navbar() {
         </div>
       </div>
       {/* Mobile Menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="md:hidden bg-white dark:bg-gray-800 overflow-hidden"
-            initial="closed"
-            animate="open"
-            exit="closed"
-            variants={variants}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
-                <Link
-                  key={index}
-                  href={`#${item.toLowerCase()}`}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-md"
-                >
-                  {item}
-                </Link>
-              ))}
-              <ThemeToggle />
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <motion.div
+        className="md:hidden bg-white dark:bg-gray-800 overflow-hidden"
+        initial="closed"
+        animate={isOpen ? "open" : "closed"}
+        variants={ulVariants}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
+      >
+        <ul className="px-2 pt-2 pb-3 space-y-1">
+          {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
+            <motion.li
+              key={index}
+              className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-md"
+              variants={liVariants}
+            >
+              <Link href={`#${item.toLowerCase()}`}>
+                {item}
+              </Link>
+            </motion.li>
+          ))}
+          <ThemeToggle />
+        </ul>
+      </motion.div>
     </nav>
   );
 }

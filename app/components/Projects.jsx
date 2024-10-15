@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 export default function Projects() {
   const [hoveredProject, setHoveredProject] = useState(null);
