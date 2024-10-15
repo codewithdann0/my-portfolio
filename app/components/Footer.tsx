@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto text-center">
         <div className="mb-4">
           <h3 className="text-xl font-bold">Connect with Me</h3>
-          <div className="flex justify-center space-x-4 mt-2">
+          <div className="flex justify-center space-x-20 mt-2">
             <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
               <FaLinkedin size={30} />
             </a>
