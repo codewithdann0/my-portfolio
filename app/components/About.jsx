@@ -41,7 +41,7 @@ export default function About() {
           <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
             My goal is to become a person who is loved by God and admired for my work. I'm confident in my ability to learn things quickly, and I thrive in team environments where communication is key. I'm pragmatic, reasonable, ambitious, and incredibly proud of my consistency and hard work. I firmly believe that dedication and perseverance will pay off in the end.
           </p>
-          
+          +
         </div>
       </div>
     </motion.section>
