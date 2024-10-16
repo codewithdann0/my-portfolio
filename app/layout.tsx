@@ -8,6 +8,7 @@ import Projects from './components/Projects'
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Skills from './components/Skills';
+import Techstacks from './components/Techstacks';
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
         <Navbar/>
         <Hero/>
         <About/>
+        <Techstacks/>
         <Skills />
         <Projects/>
         <Contact/>

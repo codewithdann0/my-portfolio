@@ -18,7 +18,7 @@ export default function Footer() {
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 120 }}
         >
-          <h3 className="text-lg font-bold mb-2">About Me</h3>
+          <h3 className="text-lg font-bold mb-2">...About Me</h3>
           <p className="text-gray-400">
             Crafting sleek, scalable applications with a passion for web
             development and continuous learning.
