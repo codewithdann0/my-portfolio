@@ -1,35 +1,85 @@
-// app/components/Footer.tsx
-'use client'
-import { FaLinkedin, FaInstagram, FaYoutube, FaTiktok} from 'react-icons/fa';
-import { FaSquareUpwork } from "react-icons/fa6";
+"use client";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-white py-10">
-      <div className="max-w-6xl mx-auto text-center">
-        <div className="mb-4">
-          <h3 className="text-xl font-bold">Connect with Me</h3>
-          <div className="flex justify-center space-x-20 mt-2">
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaLinkedin size={30} />
-            </a>
-            <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaInstagram size={30} className='text-pink-600' />
-            </a>
-            <a href="https://www.youtube.com/c/yourchannel" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaYoutube size={30}  className='text-red-600'/>
-            </a>
-            <a href="https://www.tiktok.com/@yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaTiktok size={30}  className='text-black'/>
-            </a>
-            <a href="https://www.upwork.com/freelancers/~yourprofile" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-              <FaSquareUpwork size={30}  className='text-green-600'/>
-            </a>
+    <motion.footer
+      className="bg-gray-900 text-white py-10"
+      initial={{ opacity: 0, y: 50 }} // Entrance animation
+      animate={{ opacity: 1, y: 0 }} 
+      exit={{ opacity: 0, y: 50 }} // Exit animation
+      transition={{ duration: 0.6 }}
+    >
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+        {/* About Section */}
+        <motion.div 
+          className="mb-4 md:mb-0"
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 120 }}
+        >
+          <h3 className="text-lg font-bold mb-2">About Me</h3>
+          <p className="text-gray-400">
+            Crafting sleek, scalable applications with a passion for web
+            development and continuous learning.
+          </p>
+        </motion.div>
+
+        {/* Quick Links Section */}
+        <motion.div 
+          className="mb-4 md:mb-0"
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 120 }}
+        >
+          <h3 className="text-lg font-bold mb-2">Quick Links</h3>
+          <ul className="space-y-2">
+            {["Home", "Projects", "Blog", "Contact"].map((link, index) => (
+              <motion.li
+                key={index}
+                whileHover={{ scale: 1.1, color: "#3b82f6" }}
+                transition={{ type: "spring", stiffness: 200 }}
+              >
+                <a href={`#${link.toLowerCase()}`} className="hover:underline">
+                  {link}
+                </a>
+              </motion.li>
+            ))}
+          </ul>
+        </motion.div>
+
+        {/* Social Links Section */}
+        <div>
+          <h3 className="text-lg font-bold mb-2">Connect with Me</h3>
+          <div className="flex justify-center md:justify-start space-x-6 text-white">
+            {[
+              { icon: FaGithub, link: "https://github.com/DanielTigistu" },
+              { icon: FaLinkedin, link: "https://linkedin.com/in/DanielTigistu" },
+              { icon: FaYoutube, link: "https://youtube.com/TechWithDann" },
+            ].map(({ icon: Icon, link }, index) => (
+              <motion.a
+                key={index}
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-2xl hover:text-blue-400"
+                whileHover={{ scale: 1.2, rotate: 20 }}
+                transition={{ type: "spring", stiffness: 100 }}
+              >
+                <Icon />
+              </motion.a>
+            ))}
           </div>
         </div>
-        <p className="text-sm">
-          &copy; {new Date().getFullYear()} Daniel Tigistu. All rights reserved.
-        </p>
       </div>
-    </footer>
+
+      <motion.p
+        className="mt-8 text-center text-gray-500"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
+      >
+        © 2024 Daniel Tigistu. All rights reserved.
+      </motion.p>
+    </motion.footer>
   );
 }
