@@ -1,38 +1,63 @@
 "use client"; // Ensure this component runs on the client side
-import React from 'react';
+import React from "react";
+import { FaBriefcase, FaCode, FaYoutube } from "react-icons/fa"; // Importing icons
 
 const Experience = () => {
   const experiences = [
     {
-      title: "Joiner",
-      company: "XYZ Carpentry",
-      duration: "January 2020 - June 2021",
-      description: "Worked on various woodworking projects, including custom furniture and cabinetry. Collaborated with clients to meet their specifications and ensure quality craftsmanship.",
+      title: "Web Developer",
+      company: "HavanAcademy (Freelance)",
+      duration: "July 2023 - Present",
+      description:
+        "Developing and maintaining the academy's web platform using Laravel and Tailwind CSS. Implementing access control and optimizing the platform for better student and instructor interaction.",
+      icon: <FaCode className="text-4xl text-blue-500" />, // Code-related icon
     },
     {
-      title: "Fullstack Developer",
-      company: "Tech Solutions Ltd.",
-      duration: "July 2021 - Present",
-      description: "Developed and maintained web applications using React, Node.js, and Tailwind CSS. Collaborated with cross-functional teams to enhance user experience and optimize performance.",
+      title: "Freelancer & Content Creator",
+      company: "Tech With Dann (YouTube Channel)",
+      duration: "March 2023 - Present",
+      description:
+        "Creating tech-related content in both Amharic and English, covering topics like programming, crypto, and forex. Building a community and engaging with followers to share insights.",
+      icon: <FaYoutube className="text-4xl text-red-500" />, // YouTube icon
     },
     {
-      title: "Software Engineer",
-      company: "Innovatech Inc.",
-      duration: "January 2022 - Present",
-      description: "Designed and implemented software solutions to meet business needs. Conducted code reviews, wrote unit tests, and ensured adherence to best practices in software development.",
+      title: "Freelancer",
+      company: "Various Clients",
+      duration: "May 2022 - Present",
+      description:
+        "Worked on web development projects for multiple clients, delivering solutions using Next.js, Laravel, and Tailwind CSS. Specialized in building e-commerce platforms and personal websites.",
+      icon: <FaBriefcase className="text-4xl text-green-500" />, // Business icon
     },
   ];
 
   return (
-    <section className="py-10 bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-700 text-center">
-      <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Experience</h2>
-      <div className="flex flex-col items-center space-y-8">
+    <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900">
+      <h2 className="text-4xl font-extrabold mb-12 text-gray-900 dark:text-white text-center">
+        Experience
+      </h2>
+      <div className="flex flex-wrap justify-center gap-8">
         {experiences.map((exp, index) => (
-          <div key={index} className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 w-80 transition-transform transform hover:scale-105">
-            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">{exp.title}</h3>
-            <h4 className="text-md text-gray-600 dark:text-gray-300">{exp.company}</h4>
-            <p className="text-sm text-gray-500 dark:text-gray-400">{exp.duration}</p>
-            <p className="mt-2 text-gray-700 dark:text-gray-300">{exp.description}</p>
+          <div
+            key={index}
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 w-80 
+            transition-transform  duration-300 ease-in-out 
+            hover:scale-105 hover:shadow-2xl"
+          >
+            <div className="flex items-center justify-center mb-6">
+              {exp.icon} {/* Display icon */}
+            </div>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              {exp.title}
+            </h3>
+            <h4 className="text-lg text-gray-700 dark:text-gray-300 mt-2">
+              {exp.company}
+            </h4>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              {exp.duration}
+            </p>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">
+              {exp.description}
+            </p>
           </div>
         ))}
       </div>
