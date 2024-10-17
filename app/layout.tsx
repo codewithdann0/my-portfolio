@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Skills from './components/Skills';
 import Techstacks from './components/Techstacks';
+import Exprience from './components/Exprience'
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -49,6 +50,7 @@ export default function RootLayout({
         <Techstacks/>
         <Skills />
         <Projects/>
+        <Exprience/>
         <Contact/>
         <Footer/>
         {children}

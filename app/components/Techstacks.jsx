@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaPhp, FaDatabase, FaGithub, FaMobileAlt } from 'react-icons/fa';
 import { SiNextdotjs, SiFirebase, SiStripe, SiPaypal, SiGraphql, SiRedux, SiTailwindcss, SiMongodb } from 'react-icons/si';
+import { FaLaravel } from "react-icons/fa6";
 
 // Framer Motion Variants
 const fadeInAnimation = {
@@ -16,14 +17,14 @@ const TechStacks = () => {
     { icon: <FaReact className="text-blue-500" />, name: 'React' },
     { icon: <SiNextdotjs className="text-black dark:text-white" />, name: 'Next.js' },
     { icon: <SiFirebase className="text-yellow-500" />, name: 'Firebase' },
-    { icon: <FaPhp className="text-blue-700" />, name: 'PHP' },
+    { icon: < FaLaravel className="text-red-700" />, name: 'Laravel' },
     { icon: <FaDatabase className="text-gray-600" />, name: 'MySQL' },
     { icon: <SiMongodb className="text-green-600" />, name: 'MongoDB' },
     { icon: <SiGraphql className="text-purple-600" />, name: 'GraphQL' },
     { icon: <SiStripe className="text-blue-600" />, name: 'Stripe' },
     { icon: <SiPaypal className="text-blue-500" />, name: 'PayPal' },
     { icon: <FaGithub className="text-gray-800 dark:text-gray-200" />, name: 'GitHub' },
-    { icon: <FaMobileAlt className="text-black dark:text-white" />, name: 'React Native' },
+    { icon: <FaReact className="text-blue-500" />, name: 'React Native' },
     { icon: <SiRedux className="text purple-600" />, name: 'Redux' },
     { icon: <SiTailwindcss className="text-blue-400" />, name: 'Tailwind CSS' },
   ];
