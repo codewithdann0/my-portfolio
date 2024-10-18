@@ -86,7 +86,7 @@ export default function Navbar() {
         variants={ulVariants}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <ul className="px-2 pt-2 pb-3 space-y-1">
+        <ul className="px-2 pt-2 pb-3 space-y-1 mt-0">
           {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
             <motion.li
               key={index}
