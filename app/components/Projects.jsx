@@ -1,61 +1,102 @@
-"use client";
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { MdOutlineArrowOutward } from "react-icons/md";
+'use client';
+import { motion } from 'framer-motion';
 
-export default function Projects() {
-  const [hoveredProject, setHoveredProject] = useState(null);
-
-  const projectList = [
-    { title: "Project One", description: "A brief description of Project One.", link: "https://github.com/yourusername/project-one", imageUrl: "/images/project-one.png" },
-    { title: "Project Two", description: "A brief description of Project Two.", link: "https://github.com/yourusername/project-two", imageUrl: "/images/project-two.png" },
-    { title: "Project Three", description: "A brief description of Project Three.", link: "https://github.com/yourusername/project-three", imageUrl: "/images/project-three.png" },
-    { title: "Project Four", description: "A brief description of Project Four.", link: "https://github.com/yourusername/project-four", imageUrl: "/images/project-four.png" },
-    { title: "Project Five", description: "A brief description of Project Five.", link: "https://github.com/yourusername/project-five", imageUrl: "/images/project-five.png" },
-    { title: "Project Six", description: "A brief description of Project Six.", link: "https://github.com/yourusername/project-six", imageUrl: "/images/project-six.png" },
-  ];
-
+// Project section component
+const ProjectSection = () => {
   return (
-    <section id="projects" className="py-20 bg-gray-100 dark:bg-gray-900 overflow-hidden">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">Projects</h2>
-        {/* Scrollable container with hidden scrollbar */}
-        <div className="flex space-x-8 py-4 px-2 overflow-x-auto hide-scrollbar">
-          {projectList.map((project, index) => (
-            <motion.div
-              key={index}
-              className="flex-shrink-0 p-4 bg-white shadow rounded-lg w-80 dark:bg-gray-800"
-              onMouseEnter={() => setHoveredProject(index)}
-              onMouseLeave={() => setHoveredProject(null)}
-              animate={{
-                scale: hoveredProject === index ? 1.2 : 1,
-                zIndex: hoveredProject === index ? 1 : 0,
-              }}
-              transition={{ type: "spring", stiffness: 300 }}
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <h2 className="text-3xl font-bold text-center mb-6">My Projects</h2>
+      <div className="flex flex-col space-y-8">
+        {/* Row for Large Project and Smaller Projects */}
+        <div className="flex">
+          {/* Large Project Card */}
+          <motion.div 
+            className="flex-shrink-0 w-2/3 bg-blue-500 p-6 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
+          >
+            <img 
+              src="/path/to/image1.jpg" 
+              alt="Project 1" 
+              className="w-full h-64 object-cover rounded-lg mb-4" 
+            />
+            <h3 className="text-xl font-semibold text-white">Project 1</h3>
+            <p className="text-white">Description of the large project goes here.</p>
+          </motion.div>
+
+          {/* Smaller Project Cards */}
+          <div className="flex flex-col space-y-4 w-1/3 ml-4">
+            <motion.div 
+              className="flex-shrink-0 bg-green-500 p-4 rounded-lg shadow-lg"
+              whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
             >
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="w-full h-48 object-cover rounded-md mb-4"
+              <img 
+                src="/path/to/image2.jpg" 
+                alt="Project 2" 
+                className="w-full h-32 object-cover rounded-lg mb-2" 
               />
-              <h3 className="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-400 mb-4">
-                {project.description}
-              </p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:underline dark:text-blue-400"
-              >
-                View Project
-              </a>
+              <h3 className="text-lg font-semibold text-white">Project 2</h3>
+              <p className="text-white">Short description of project 2.</p>
             </motion.div>
-          ))}
+
+            <motion.div 
+              className="flex-shrink-0 bg-yellow-500 p-4 rounded-lg shadow-lg"
+              whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
+            >
+              <img 
+                src="/path/to/image3.jpg" 
+                alt="Project 3" 
+                className="w-full h-32 object-cover rounded-lg mb-2" 
+              />
+              <h3 className="text-lg font-semibold text-white">Project 3</h3>
+              <p className="text-white">Short description of project 3.</p>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Next Row of Projects */}
+        <div className="flex space-x-4">
+          <motion.div 
+            className="flex-shrink-0 w-1/3 bg-red-500 p-4 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
+          >
+            <img 
+              src="/path/to/image4.jpg" 
+              alt="Project 4" 
+              className="w-full h-32 object-cover rounded-lg mb-2" 
+            />
+            <h3 className="text-lg font-semibold text-white">Project 4</h3>
+            <p className="text-white">Short description of project 4.</p>
+          </motion.div>
+
+          <motion.div 
+            className="flex-shrink-0 w-1/3 bg-purple-500 p-4 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
+          >
+            <img 
+              src="/path/to/image5.jpg" 
+              alt="Project 5" 
+              className="w-full h-32 object-cover rounded-lg mb-2" 
+            />
+            <h3 className="text-lg font-semibold text-white">Project 5</h3>
+            <p className="text-white">Short description of project 5.</p>
+          </motion.div>
+
+          <motion.div 
+            className="flex-shrink-0 w-1/3 bg-orange-500 p-4 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
+          >
+            <img 
+              src="/path/to/image6.jpg" 
+              alt="Project 6" 
+              className="w-full h-32 object-cover rounded-lg mb-2" 
+            />
+            <h3 className="text-lg font-semibold text-white">Project 6</h3>
+            <p className="text-white">Short description of project 6.</p>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </div>
   );
-}
+};
+
+export default ProjectSection;
