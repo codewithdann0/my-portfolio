@@ -4,14 +4,14 @@ import { motion } from 'framer-motion';
 // Project section component
 const ProjectSection = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <h2 className="text-3xl font-bold text-center mb-6">My Projects</h2>
+    <section className="w-full px-4 sm:px-6 lg:px-8 py-10 bg-gray-100 dark:bg-gray-800">
+      <h2 className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white">My Projects</h2>
       <div className="flex flex-col space-y-8">
         {/* Row for Large Project and Smaller Projects */}
         <div className="flex">
           {/* Large Project Card */}
           <motion.div 
-            className="flex-shrink-0 w-2/3 bg-blue-500 p-6 rounded-lg shadow-lg"
+            className="flex-shrink-0 w-2/3 bg-blue-500 p-6 rounded-lg shadow-lg dark:bg-blue-600"
             whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
           >
             <img 
@@ -26,7 +26,7 @@ const ProjectSection = () => {
           {/* Smaller Project Cards */}
           <div className="flex flex-col space-y-4 w-1/3 ml-4">
             <motion.div 
-              className="flex-shrink-0 bg-green-500 p-4 rounded-lg shadow-lg"
+              className="flex-shrink-0 bg-green-500 p-4 rounded-lg shadow-lg dark:bg-green-600"
               whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
             >
               <img 
@@ -39,7 +39,7 @@ const ProjectSection = () => {
             </motion.div>
 
             <motion.div 
-              className="flex-shrink-0 bg-yellow-500 p-4 rounded-lg shadow-lg"
+              className="flex-shrink-0 bg-yellow-500 p-4 rounded-lg shadow-lg dark:bg-yellow-600"
               whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
             >
               <img 
@@ -56,7 +56,7 @@ const ProjectSection = () => {
         {/* Next Row of Projects */}
         <div className="flex space-x-4">
           <motion.div 
-            className="flex-shrink-0 w-1/3 bg-red-500 p-4 rounded-lg shadow-lg"
+            className="flex-shrink-0 w-1/3 bg-red-500 p-4 rounded-lg shadow-lg dark:bg-red-600"
             whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
           >
             <img 
@@ -69,7 +69,7 @@ const ProjectSection = () => {
           </motion.div>
 
           <motion.div 
-            className="flex-shrink-0 w-1/3 bg-purple-500 p-4 rounded-lg shadow-lg"
+            className="flex-shrink-0 w-1/3 bg-purple-500 p-4 rounded-lg shadow-lg dark:bg-purple-600"
             whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
           >
             <img 
@@ -82,7 +82,7 @@ const ProjectSection = () => {
           </motion.div>
 
           <motion.div 
-            className="flex-shrink-0 w-1/3 bg-orange-500 p-4 rounded-lg shadow-lg"
+            className="flex-shrink-0 w-1/3 bg-orange-500 p-4 rounded-lg shadow-lg dark:bg-orange-600"
             whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
           >
             <img 
@@ -95,7 +95,7 @@ const ProjectSection = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
