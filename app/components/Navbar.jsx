@@ -31,11 +31,6 @@ export default function Navbar() {
     <nav className="fixed w-full top-0 z-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo / Brand */}
-          <Link href="/" className="text-2xl font-bold text-blue-600">
-            {/* Logo or Brand Name */}
-            
-          </Link>
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-20">
             {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item, index) => (
