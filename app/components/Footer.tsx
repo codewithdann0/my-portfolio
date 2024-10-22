@@ -11,17 +11,16 @@ export default function Footer() {
       exit={{ opacity: 0, y: 50 }} // Exit animation
       transition={{ duration: 0.6 }}
     >
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left px-4">
         {/* About Section */}
         <motion.div 
           className="mb-4 md:mb-0"
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 120 }}
         >
-          <h3 className="text-lg font-bold mb-2">...About Me</h3>
+          <h3 className="text-lg font-bold mb-2">About Me</h3>
           <p className="text-gray-400">
-            Crafting sleek, scalable applications with a passion for web
-            development and continuous learning.
+            Crafting sleek, scalable applications with a passion for web development and continuous learning.
           </p>
         </motion.div>
 
@@ -61,7 +60,7 @@ export default function Footer() {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-2xl hover:text-blue-400"
+                className="text-2xl hover:text-blue-400 transition duration-300"
                 whileHover={{ scale: 1.2, rotate: 20 }}
                 transition={{ type: "spring", stiffness: 100 }}
               >
@@ -78,7 +77,7 @@ export default function Footer() {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
       >
-        © 2024 Daniel Tigistu. All rights reserved.
+        © {new Date().getFullYear()} Daniel Tigistu. All rights reserved.
       </motion.p>
     </motion.footer>
   );
