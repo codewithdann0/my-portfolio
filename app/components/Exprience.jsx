@@ -35,57 +35,30 @@ const Experience = () => {
       <h2 className="text-4xl font-extrabold mb-12 text-gray-900 dark:text-white text-center">
         Experience
       </h2>
-      <div className="flex flex-wrap justify-center gap-8">
-        {/* Large Experience Item */}
-        <div
-          className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 w-96
-          transition-transform duration-300 ease-in-out 
-          hover:scale-105 hover:shadow-2xl"
-        >
-          <div className="flex items-center justify-center mb-6">
-            {experiences[0].icon} {/* Display icon */}
-          </div>
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-            {experiences[0].title}
-          </h3>
-          <h4 className="text-lg text-gray-700 dark:text-gray-300 mt-2">
-            {experiences[0].company}
-          </h4>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-            {experiences[0].duration}
-          </p>
-          <p className="mt-4 text-gray-600 dark:text-gray-300">
-            {experiences[0].description}
-          </p>
-        </div>
-
-        {/* Smaller Experience Items */}
-        <div className="flex flex-col gap-8">
-          {experiences.slice(1).map((exp, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-80
-              transition-transform duration-300 ease-in-out 
-              hover:scale-105 hover:shadow-2xl"
-            >
-              <div className="flex items-center justify-center mb-4">
-                {exp.icon} {/* Display icon */}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                {exp.title}
-              </h3>
-              <h4 className="text-md text-gray-700 dark:text-gray-300 mt-2">
-                {exp.company}
-              </h4>
-              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-                {exp.duration}
-              </p>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
-                {exp.description}
-              </p>
+      <div className="flex flex-wrap justify-center gap-8 px-4"> {/* Added px-4 for padding */}
+        {/* Experience Items */}
+        {experiences.map((exp, index) => (
+          <div
+            key={index}
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 w-full sm:w-96 md:w-80 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
+          >
+            <div className="flex items-center justify-center mb-6">
+              {exp.icon} {/* Display icon */}
             </div>
-          ))}
-        </div>
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              {exp.title}
+            </h3>
+            <h4 className="text-lg text-gray-700 dark:text-gray-300 mt-2">
+              {exp.company}
+            </h4>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              {exp.duration}
+            </p>
+            <p className="mt-4 text-gray-600 dark:text-gray-300">
+              {exp.description}
+            </p>
+          </div>
+        ))}
       </div>
     </section>
   );
