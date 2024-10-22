@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const ProjectSection = () => {
   return (
     <section className="w-full px-4 sm:px-6 lg:px-8 py-10 bg-gray-100 dark:bg-gray-800">
-      <h2 className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white">My Projects</h2>
+      <h2 id='projects' className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white">My Projects</h2>
       <div className="flex flex-col space-y-8">
         {/* Row for Large Project and Smaller Projects */}
         <div className="flex">
