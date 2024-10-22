@@ -1,7 +1,16 @@
 "use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
-
+import Typewriter from "typewriter-effect";
+import {
+  FaLaptopCode,
+  FaGithub,
+  FaInstagram,
+  FaTiktok,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa";
+import Link from "next/link";
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -53,6 +62,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-gray-100 dark:bg-gray-900">
+       
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
           Contact Me
@@ -105,6 +115,25 @@ export default function Contact() {
           </motion.button>
         </form>
       </div>
+      <div className="flex gap-10 justify-center">
+          {[
+            { name: "GitHub", url: "https://github.com", icon: <FaGithub /> },
+            { name: "Instagram", url: "https://instagram.com", icon: <FaInstagram /> },
+            { name: "YouTube", url: "https://youtube.com", icon: <FaYoutube /> },
+            { name: "TikTok", url: "https://tiktok.com", icon: <FaTiktok /> },
+            { name: "LinkedIn", url: "https://linkedin.com", icon: <FaLinkedin /> },
+          ].map((link) => (
+            <Link
+              key={link.name}
+              href={link.url}
+              target="_blank"
+              className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition-transform transform hover:scale-110"
+            >
+              {link.icon}
+              {link.name}
+            </Link>
+          ))}
+        </div>
     </section>
   );
 }

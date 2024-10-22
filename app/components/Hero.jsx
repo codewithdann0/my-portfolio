@@ -51,25 +51,7 @@ const Hero = () => {
         </motion.div>
              
         {/* Social Media Links */}
-        <div className="flex gap-10 justify-center">
-          {[
-            { name: "GitHub", url: "https://github.com", icon: <FaGithub /> },
-            { name: "Instagram", url: "https://instagram.com", icon: <FaInstagram /> },
-            { name: "YouTube", url: "https://youtube.com", icon: <FaYoutube /> },
-            { name: "TikTok", url: "https://tiktok.com", icon: <FaTiktok /> },
-            { name: "LinkedIn", url: "https://linkedin.com", icon: <FaLinkedin /> },
-          ].map((link) => (
-            <Link
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-full text-sm hover:bg-gray-800 transition-transform transform hover:scale-110"
-            >
-              {link.icon}
-              {link.name}
-            </Link>
-          ))}
-        </div>
+      
       </div>
     </section>
   );
