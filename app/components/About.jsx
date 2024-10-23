@@ -14,7 +14,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-stretch text-center md:text-left border-4 border-gradient rounded-lg shadow-lg glow-border p-8"> {/* Increased padding for the container */}
         <div className="md:w-1/4 mb-4 md:mb-0"> {/* No padding here for image container */}
           <img
-            src="/img.jpg" // Replace with your image path
+            src="/dani.png" // Replace with your image path
             alt="My Image"
             className="w-full h-full object-cover rounded-xl" // Changed to full height and width
           />
