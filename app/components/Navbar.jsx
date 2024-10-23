@@ -1,10 +1,10 @@
 'use client';
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+
 import { MdOutlineArrowOutward } from 'react-icons/md';
 import ThemeToggle from './ThemeToggle';
 import { motion, useMotionValue, animate, stagger } from 'framer-motion';
-
+import Link from 'next/link';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const progress = useMotionValue(0);
@@ -96,6 +96,7 @@ export default function Navbar() {
           <ThemeToggle />
         </ul>
       </motion.div>
+      <hr  className='text-white '/>
     </nav>
   );
 }
