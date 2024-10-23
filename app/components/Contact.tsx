@@ -1,9 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
-import Typewriter from "typewriter-effect";
 import {
-  FaLaptopCode,
   FaGithub,
   FaInstagram,
   FaTiktok,
@@ -11,6 +8,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import Link from "next/link";
+
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -62,7 +60,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="py-20 bg-gray-100 dark:bg-gray-900">
-       
       <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
           Contact Me
@@ -71,7 +68,7 @@ export default function Contact() {
           I'd love to hear from you! Please fill out the form below.
         </p>
         <form onSubmit={handleSubmit} className="space-y-4">
-          <motion.input
+          <input
             type="text"
             placeholder="Your Name"
             value={name}
@@ -79,9 +76,8 @@ export default function Contact() {
             required
             className="w-full p-3 border border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label="Your Name"
-            whileFocus={{ scale: 1.02 }}
           />
-          <motion.input
+          <input
             type="email"
             placeholder="Your Email"
             value={email}
@@ -89,33 +85,29 @@ export default function Contact() {
             required
             className="w-full p-3 border border-gray-300 rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label="Your Email"
-            whileFocus={{ scale: 1.02 }}
           />
-          <motion.textarea
+          <textarea
             placeholder="Your Message"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
             className="w-full p-3 border border-gray-300 rounded-md h-32 dark:bg-gray-800 dark:border-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label="Your Message"
-            whileFocus={{ scale: 1.02 }}
           />
           {/* Error message */}
           {error && <p className="text-red-500">{error}</p>}
           {/* Success message */}
           {success && <p className="text-green-500">{success}</p>}
-          <motion.button
+          <button
             type="submit"
-            className={`w-full p-3 bg-blue-600 text-white rounded-md ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}`}
+            className={`w-full p-3 bg-gradient-to-r from-blue-500 to-blue-700 text-white rounded-md transition-all duration-300 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
             disabled={loading}
-            whileHover={{ scale: 1.05 }}
-            animate={{ y: [0, -5, 0], transition: { duration: 0.5, repeat: Infinity, repeatType: "reverse" }}}
           >
             {loading ? 'Sending...' : 'Send Message'}
-          </motion.button>
+          </button>
         </form>
-      </div>
-      <div className="flex gap-10 justify-center">
+      </div> 
+      <div className="flex gap-10 justify-center mt-10">
           {[
             { name: "GitHub", url: "https://github.com", icon: <FaGithub /> },
             { name: "Instagram", url: "https://instagram.com", icon: <FaInstagram /> },
@@ -134,6 +126,7 @@ export default function Contact() {
             </Link>
           ))}
         </div>
+      
     </section>
   );
 }
