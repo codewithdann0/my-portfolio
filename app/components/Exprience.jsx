@@ -9,56 +9,61 @@ const Experience = () => {
       company: "HavanAcademy (Freelance)",
       duration: "July 2023 - Present",
       description:
-        "Developing and maintaining the academy's web platform using Laravel and Tailwind CSS. Implementing access control and optimizing the platform for better student and instructor interaction.",
-      icon: <FaCode className="text-4xl text-blue-500" />, // Code-related icon
+        "Developed and maintained the academy's platform using Laravel and Tailwind CSS, implementing access control and optimizing interaction for students and instructors.",
+      icon: <FaCode className="text-5xl text-blue-500" />, // Code icon
     },
     {
       title: "Freelancer & Content Creator",
       company: "Tech With Dann (YouTube Channel)",
       duration: "March 2023 - Present",
       description:
-        "Creating tech-related content in both Amharic and English, covering topics like programming, crypto, and forex. Building a community and engaging with followers to share insights.",
-      icon: <FaYoutube className="text-4xl text-red-500" />, // YouTube icon
+        "Create tech content in Amharic and English, covering programming, crypto, and forex. Build a tech community while engaging with viewers to share insights.",
+      icon: <FaYoutube className="text-5xl text-red-500" />, // YouTube icon
     },
     {
       title: "Freelancer",
       company: "Various Clients",
       duration: "May 2022 - Present",
       description:
-        "Worked on web development projects for multiple clients, delivering solutions using Next.js, Laravel, and Tailwind CSS. Specialized in building e-commerce platforms and personal websites.",
-      icon: <FaBriefcase className="text-4xl text-green-500" />, // Business icon
+        "Delivered web solutions using Next.js, Laravel, and Tailwind CSS. Specialized in building e-commerce platforms and personal websites for diverse clients.",
+      icon: <FaBriefcase className="text-5xl text-green-500" />, // Business icon
     },
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-gray-200 dark:from-gray-800 dark:to-gray-900">
-      <h2 className="text-4xl font-extrabold mb-12 text-gray-900 dark:text-white text-center">
-        Experience
-      </h2>
-      <div className="flex flex-wrap justify-center gap-8 px-4"> {/* Added px-4 for padding */}
-        {/* Experience Items */}
-        {experiences.map((exp, index) => (
-          <div
-            key={index}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 w-full sm:w-96 md:w-80 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
-          >
-            <div className="flex items-center justify-center mb-6">
-              {exp.icon} {/* Display icon */}
+    <section
+      id="experience"
+      className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+    >
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <h2 className="text-4xl font-extrabold mb-10 text-gray-900 dark:text-white">
+          Experience
+        </h2>
+        <div className="flex flex-wrap justify-center gap-8">
+          {/* Experience Items */}
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 w-full sm:w-80 md:w-96 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+            >
+              <div className="flex items-center justify-center mb-4">
+                {exp.icon}
+              </div>
+              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                {exp.title}
+              </h3>
+              <h4 className="text-lg text-gray-700 dark:text-gray-300 mt-2">
+                {exp.company}
+              </h4>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                {exp.duration}
+              </p>
+              <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+                {exp.description}
+              </p>
             </div>
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
-              {exp.title}
-            </h3>
-            <h4 className="text-lg text-gray-700 dark:text-gray-300 mt-2">
-              {exp.company}
-            </h4>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-              {exp.duration}
-            </p>
-            <p className="mt-4 text-gray-600 dark:text-gray-300">
-              {exp.description}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

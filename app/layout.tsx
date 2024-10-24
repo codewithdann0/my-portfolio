@@ -5,11 +5,12 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects'
-import Contact from "./components/Contact";
+import Contact from "./components/Services";
 import Footer from "./components/Footer";
 import Skills from './components/Skills';
 import Techstacks from './components/Techstacks';
 import Exprience from './components/Exprience'
+import Services from "./components/Services";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -51,7 +52,7 @@ export default function RootLayout({
         <Skills />
         <Projects/>
         <Exprience/>
-        <Contact/>
+        <Services/>
         <Footer/>
         {children}
       </body>
