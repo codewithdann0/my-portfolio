@@ -56,7 +56,7 @@ const Hero = () => {
             </button>
           </Link>
 
-          <Link href="https://www.linkedin.com/in/yourusername/messages/">
+          <Link href="https://www.linkedin.com/in/https:/daniel-tigistu-918a63314/messages/">
             <button className="px-6 py-3 font-semibold rounded-lg shadow-md transition-all duration-300 glow-button gradient-button">
               Hire Me
             </button>
