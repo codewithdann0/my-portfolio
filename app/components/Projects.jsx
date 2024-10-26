@@ -12,7 +12,7 @@ const ProjectSection = () => {
           {/* Large Project Card */}
           <motion.div 
             className="flex-shrink-0 w-2/3 bg-blue-500 p-6 rounded-lg shadow-lg dark:bg-blue-600"
-            whileHover={{ scale: 1.05 }} // Optional: scale effect on hover
+            whileHover={{ scale: 1.02 }} // Optional: scale effect on hover
           >
             <img 
               src="/path/to/image1.jpg" 
