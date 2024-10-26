@@ -39,26 +39,26 @@ const Experience = () => {
         <h2 className="text-4xl font-extrabold mb-10 text-gray-900 dark:text-white">
           Experience
         </h2>
-        <div className="flex flex-wrap justify-center gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Experience Items */}
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 w-full sm:w-80 md:w-96 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+              className="relative bg-gray-800 dark:bg-white rounded-3xl shadow-lg p-8 transition-transform duration-300 transform hover:scale-105 hover:shadow-xl text-gray-900 dark:text-gray-900"
             >
-              <div className="flex items-center justify-center mb-4">
+              <div className="flex justify-center mb-4">
                 {exp.icon}
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-2xl font-semibold text-center mt-6">
                 {exp.title}
               </h3>
-              <h4 className="text-lg text-gray-700 dark:text-gray-300 mt-2">
+              <h4 className="text-lg text-gray-700 dark:text-gray-800 mt-2 text-center">
                 {exp.company}
               </h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              <p className="text-sm text-gray-500 dark:text-gray-600 mt-1 text-center">
                 {exp.duration}
               </p>
-              <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="mt-4 text-gray-600 dark:text-gray-600 leading-relaxed text-center">
                 {exp.description}
               </p>
             </div>
