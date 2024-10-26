@@ -1,55 +1,43 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  FaPhp,
-  FaJsSquare,
-  FaPython,
-  FaLaravel,
-  FaJava,
-  FaGitAlt,
-  FaBootstrap,
-} from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
-import { BiLogoCPlusPlus, BiLogoTailwindCss, BiLogoReact } from "react-icons/bi";
-import { useState } from "react";
+import { FaPhp, FaJsSquare, FaPython, FaJava } from "react-icons/fa";
+import { BiLogoCPlusPlus } from "react-icons/bi";
 
-// Animation variant for skill divs
+// Animation variant for skill cards
 const skillVariants = {
-  initial: { opacity: 0, scale: 0.9 },
-  animate: { opacity: 1, scale: 1 },
-  whileHover: { scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.3)" },
-  transition: { duration: 0.3 },
+  initial: { opacity: 0, y: 30, scale: 0.9 },
+  animate: { opacity: 1, y: 0, scale: 1 },
+  whileHover: { 
+    scale: 1.1, 
+    rotate: 5, 
+    boxShadow: "0 10px 15px rgba(0, 0, 0, 0.3)" 
+  },
+  transition: { duration: 0.4 },
 };
 
 export default function Skills() {
-  const [isForward, setIsForward] = useState(true);
-
   const skillsList = [
-    { title: "Next.js", icon: <BiLogoReact className="w-12 h-12 text-gray-700" /> },
-    { title: "Java", icon: <FaJava className="w-12 h-12 text-red-600" /> },
-    { title: "Git", icon: <FaGitAlt className="w-12 h-12 text-orange-500" /> },
-    { title: "Tailwind CSS", icon: <BiLogoTailwindCss className="w-12 h-12 text-teal-400" /> },
-    { title: "Bootstrap", icon: <FaBootstrap className="w-12 h-12 text-purple-600" /> },
-    { title: "React Native", icon: <BiLogoReact className="w-12 h-12 text-blue-500" /> },
-    { title: "Golang", icon: <FaGolang className="w-12 h-12 text-green-400" /> },
-    { title: "C++", icon: <BiLogoCPlusPlus className="w-12 h-12 text-blue-700" /> },
-    { title: "PHP", icon: <FaPhp className="w-12 h-12 text-blue-700" /> },
-    { title: "JavaScript", icon: <FaJsSquare className="w-12 h-12 text-yellow-500" /> },
-    { title: "Python", icon: <FaPython className="w-12 h-12 text-yellow-300" /> },
-    { title: "Laravel", icon: <FaLaravel className="w-12 h-12 text-red-500" /> },
+    { title: "C++", icon: <BiLogoCPlusPlus className="w-16 h-16 text-blue-700" /> },
+    { title: "Python", icon: <FaPython className="w-16 h-16 text-yellow-300" /> },
+    { title: "JavaScript", icon: <FaJsSquare className="w-16 h-16 text-yellow-500" /> },
+    { title: "PHP", icon: <FaPhp className="w-16 h-16 text-indigo-600" /> },
+    { title: "Java", icon: <FaJava className="w-16 h-16 text-red-600" /> },
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gray-100 dark:bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold text-center mb-5 text-gray-800 dark:text-white">I used ..</h2>
+    <section id="skills" className="py-20 bg-gradient-to-r from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-4xl font-bold text-center mb-8 text-gray-800 dark:text-white">
+        Programming Languages I'm Familiar With.
+        </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
           {skillsList.map((skill, index) => (
             <motion.div
               key={`skill-${index}`}
-              className="flex flex-col items-center p-4 rounded-xl shadow-lg 
-                         bg-white/40 dark:bg-gray-900/40 backdrop-blur-md"
+              className="flex flex-col items-center p-6 rounded-2xl shadow-lg 
+                         bg-white dark:bg-gray-800 hover:bg-indigo-50 dark:hover:bg-gray-700 
+                         transition-colors duration-300 ease-in-out"
               variants={skillVariants}
               initial="initial"
               animate="animate"

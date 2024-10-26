@@ -1,13 +1,13 @@
-"use client"; // Ensure this component runs on the client side
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  FaReact, FaNodeJs, FaPhp, FaDatabase, FaGithub, FaMobileAlt, FaLaravel 
-} from 'react-icons/fa';
-import { 
-  SiNextdotjs, SiFirebase, SiStripe, SiPaypal, SiGraphql, SiRedux, 
-  SiTailwindcss, SiMongodb 
-} from 'react-icons/si';
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaReact, FaNodeJs, FaPhp, FaDatabase, FaGithub, FaMobileAlt, FaLaravel,
+} from "react-icons/fa";
+import {
+  SiNextdotjs, SiFirebase, SiStripe, SiPaypal, SiGraphql, SiRedux,
+  SiTailwindcss, SiMongodb,
+} from "react-icons/si";
 
 // Framer Motion Variants
 const fadeInAnimation = {
@@ -16,41 +16,39 @@ const fadeInAnimation = {
 };
 
 const TechStacks = () => {
-  const [hovered, setHovered] = useState(null); // Track hovered icon
-
   const techStack = [
-    { icon: <FaReact className="text-blue-500" />, name: 'React' },
-    { icon: <SiNextdotjs className="text-black dark:text-white" />, name: 'Next.js' },
-    { icon: <SiFirebase className="text-yellow-500" />, name: 'Firebase' },
-    { icon: <FaLaravel className="text-red-700" />, name: 'Laravel' },
-    { icon: <FaDatabase className="text-gray-600" />, name: 'MySQL' },
-    { icon: <SiMongodb className="text-green-600" />, name: 'MongoDB' },
-    { icon: <SiGraphql className="text-purple-600" />, name: 'GraphQL' },
-    { icon: <SiStripe className="text-blue-600" />, name: 'Stripe' },
-    { icon: <SiPaypal className="text-blue-500" />, name: 'PayPal' },
-    { icon: <FaGithub className="text-gray-800 dark:text-gray-200" />, name: 'GitHub' },
-    { icon: <FaReact className="text-blue-500" />, name: 'React Native' },
-    { icon: <SiRedux className="text-purple-600" />, name: 'Redux' },
-    { icon: <SiTailwindcss className="text-blue-400" />, name: 'Tailwind CSS' },
+    { icon: <FaReact />, name: "React" },
+    { icon: <SiNextdotjs />, name: "Next.js" },
+    { icon: <SiFirebase />, name: "Firebase" },
+    { icon: <FaLaravel />, name: "Laravel" },
+    { icon: <FaDatabase />, name: "MySQL" },
+    { icon: <SiMongodb />, name: "MongoDB" },
+    { icon: <SiGraphql />, name: "GraphQL" },
+    { icon: <SiStripe />, name: "Stripe" },
+    { icon: <SiPaypal />, name: "PayPal" },
+    { icon: <FaGithub />, name: "GitHub" },
+    { icon: <FaReact />, name: "React Native" },
+    { icon: <SiRedux />, name: "Redux" },
+    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
   ];
 
   return (
     <section className="py-10 bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-700 text-center">
-      <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">MY Tech Stack</h2>
-      <div className="flex flex-wrap justify-center gap-6">
+      <h2 className="text-4xl font-bold mb-8 text-gray-800 dark:text-white">MY Tech Stack</h2>
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 p-6">
         {techStack.map((tech, index) => (
           <motion.div
             key={index}
-            className={`flex flex-col items-center justify-center w-16 h-16 rounded-full bg-white shadow-lg transition-all transform duration-300 hover:scale-110 dark:bg-gray-800 
-              ${hovered !== null && hovered !== index ? 'blur-sm' : ''}`}
+            className="flex flex-col items-center justify-center w-full h-40 rounded-lg bg-white shadow-lg dark:bg-gray-800 
+                      transition-transform transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,132,255,0.8)]"
             initial="hidden"
             animate="visible"
             variants={fadeInAnimation}
-            onMouseEnter={() => setHovered(index)}
-            onMouseLeave={() => setHovered(null)}
           >
-            {tech.icon}
-            <span className="text-xs text-gray-600 dark:text-gray-300">{tech.name}</span>
+            <div className="text-6xl text-blue-500 mb-2">{tech.icon}</div>
+            <span className="text-lg font-medium text-gray-600 dark:text-gray-300">
+              {tech.name}
+            </span>
           </motion.div>
         ))}
       </div>

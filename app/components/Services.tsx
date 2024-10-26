@@ -14,8 +14,8 @@ export default function Services() {
       icon: <FaCode />,
     },
     {
-      title: "Python & Competitive Programming",
-      description: "Providing tutorials in Python and competitive coding.",
+      title: "Web Development and Problem Solving",
+      description: "Providing tutorials in Webdevelopment and competitive coding.",
       icon: <FaChalkboardTeacher />,
     },
     {
