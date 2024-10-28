@@ -1,6 +1,6 @@
 "use client"; // Ensure this component runs on the client side
 import React from "react";
-import { FaBriefcase, FaCode, FaYoutube } from "react-icons/fa"; // Importing icons
+import { FaBriefcase, FaCode, FaYoutube, FaGraduationCap } from "react-icons/fa"; // Importing icons
 
 const Experience = () => {
   const experiences = [
@@ -20,14 +20,6 @@ const Experience = () => {
         "Create tech content in Amharic and English, covering programming, crypto, and forex. Build a tech community while engaging with viewers to share insights.",
       icon: <FaYoutube className="text-4xl text-red-500" />,
     },
-    {
-      title: "Freelancer",
-      company: "Various Clients",
-      duration: "May 2024 - Present",
-      description:
-        "Delivered web solutions using Next.js, Laravel, and Tailwind CSS. Specialized in building e-commerce platforms and personal websites for diverse clients.",
-      icon: <FaBriefcase className="text-4xl text-green-500" />,
-    },
   ];
 
   return (
@@ -45,7 +37,7 @@ const Experience = () => {
               key={index}
               className="mb-10 ml-10 group transition-all duration-300"
             >
-              <span className="absolute -left-5 flex items-center justify-center w-10 h-10 bg-blue-500 dark:bg-blue-400 text-white rounded-full group-hover:scale-110 transition-transform">
+              <span className="absolute -left-5 flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-gray-700 text-white rounded-full group-hover:scale-110 transition-transform">
                 {exp.icon}
               </span>
               <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
@@ -64,6 +56,27 @@ const Experience = () => {
               </div>
             </div>
           ))}
+
+          {/* New Education Section */}
+          <div className="mb-10 ml-10 group transition-all duration-300">
+            <span className="absolute -left-5 flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-gray-700 text-white rounded-full group-hover:scale-110 transition-transform">
+              <FaGraduationCap className="text-4xl text-blue-500" />
+            </span>
+            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+                Software Engineering
+              </h3>
+              <h4 className="text-lg text-blue-500 dark:text-blue-400 mt-1">
+                Haramaya University
+              </h4>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                Expected Graduation: 2027
+              </p>
+              <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                Currently pursuing a degree in Software Engineering, gaining skills in programming, web development, and software design.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

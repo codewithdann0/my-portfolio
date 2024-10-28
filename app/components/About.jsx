@@ -21,10 +21,10 @@ export default function About() {
         </div>
         <div className="md:w-3/4 md:pl-12 flex flex-col justify-center"> {/* Added flex column to center text */}
           <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-4">
-            About Me
+           ......../ About Me
           </h2>
           <p className="text-md text-gray-600 dark:text-gray-400">
-            Hi! I'm Daniel Tigistu, a 23-year-old, 4th-year software engineering student at Haramaya University. I started programming and web development three years ago, and it's been a thrilling journey. I have a passion for creating stunning websites for clients and my company, and I find immense satisfaction in building things from the ground up. My goal is to become a person who is loved by God and admired for my work. I'm confident in my ability to learn things quickly, and I thrive in team environments where communication is key. I'm pragmatic, reasonable, ambitious, and incredibly proud of my consistency and hard work. I firmly believe that dedication and perseverance will pay off in the end.
+            Hi! I'm Daniel Tigistu, a dedicated web developer specializing in creating responsive and user-friendly applications. With a solid background in technologies like Laravel, Next.js, and Tailwind CSS, I provide tailored web solutions that meet your unique needs. My passion lies in delivering high-quality work that not only satisfies clients but also contributes to their success. I thrive in collaborative environments, ensuring effective communication and commitment to project goals. Let's work together to bring your vision to life!
           </p>
         </div>
       </div>
