@@ -10,7 +10,7 @@ const Experience = () => {
       duration: "July 2023 - Present",
       description:
         "Developed and maintained the academy's platform using Laravel and Tailwind CSS, implementing access control and optimizing interaction for students and instructors.",
-      icon: <FaCode className="text-5xl text-blue-500" />, // Code icon
+      icon: <FaCode className="text-4xl text-blue-500" />,
     },
     {
       title: "Freelancer & Content Creator",
@@ -18,49 +18,50 @@ const Experience = () => {
       duration: "March 2023 - Present",
       description:
         "Create tech content in Amharic and English, covering programming, crypto, and forex. Build a tech community while engaging with viewers to share insights.",
-      icon: <FaYoutube className="text-5xl text-red-500" />, // YouTube icon
+      icon: <FaYoutube className="text-4xl text-red-500" />,
     },
     {
       title: "Freelancer",
       company: "Various Clients",
-      duration: "May 2022 - Present",
+      duration: "May 2024 - Present",
       description:
         "Delivered web solutions using Next.js, Laravel, and Tailwind CSS. Specialized in building e-commerce platforms and personal websites for diverse clients.",
-      icon: <FaBriefcase className="text-5xl text-green-500" />, // Business icon
+      icon: <FaBriefcase className="text-4xl text-green-500" />,
     },
   ];
 
   return (
     <section
       id="experience"
-      className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
+      className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800"
     >
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl font-extrabold mb-10 text-gray-900 dark:text-white">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-4xl font-extrabold mb-16 text-center text-gray-900 dark:text-white">
           Experience
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Experience Items */}
+        <div className="relative border-l-4 border-blue-500 dark:border-blue-400">
           {experiences.map((exp, index) => (
             <div
               key={index}
-              className="relative bg-gray-800 dark:bg-white rounded-3xl shadow-lg p-8 transition-transform duration-300 transform hover:scale-105 hover:shadow-xl text-gray-900 dark:text-gray-900"
+              className="mb-10 ml-10 group transition-all duration-300"
             >
-              <div className="flex justify-center mb-4">
+              <span className="absolute -left-5 flex items-center justify-center w-10 h-10 bg-blue-500 dark:bg-blue-400 text-white rounded-full group-hover:scale-110 transition-transform">
                 {exp.icon}
+              </span>
+              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+                <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+                  {exp.title}
+                </h3>
+                <h4 className="text-lg text-blue-500 dark:text-blue-400 mt-1">
+                  {exp.company}
+                </h4>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                  {exp.duration}
+                </p>
+                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {exp.description}
+                </p>
               </div>
-              <h3 className="text-2xl font-semibold text-center mt-6">
-                {exp.title}
-              </h3>
-              <h4 className="text-lg text-gray-700 dark:text-gray-800 mt-2 text-center">
-                {exp.company}
-              </h4>
-              <p className="text-sm text-gray-500 dark:text-gray-600 mt-1 text-center">
-                {exp.duration}
-              </p>
-              <p className="mt-4 text-gray-600 dark:text-gray-600 leading-relaxed text-center">
-                {exp.description}
-              </p>
             </div>
           ))}
         </div>
