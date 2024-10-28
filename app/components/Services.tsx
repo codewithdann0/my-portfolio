@@ -15,7 +15,7 @@ export default function Services() {
     },
     {
       title: "Web Development and Problem Solving",
-      description: "Providing tutorials in Webdevelopment and competitive coding.",
+      description: "Providing tutorials in Web development and competitive coding.",
       icon: <FaChalkboardTeacher />,
     },
     {
@@ -38,17 +38,20 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="p-6 bg-white dark:bg-gray-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+              className="
+                p-6 
+                transition-shadow 
+                rounded-lg 
+                shadow-lg hover:shadow-xl 
+                bg-gray-800 text-white 
+                dark:bg-white dark:text-gray-900
+              "
             >
               <div className="flex items-center justify-center text-blue-600 dark:text-blue-400 text-4xl mb-4">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">
-                {service.description}
-              </p>
+              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+              <p>{service.description}</p>
             </div>
           ))}
         </div>
