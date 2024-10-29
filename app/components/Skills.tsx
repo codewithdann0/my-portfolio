@@ -28,16 +28,16 @@ export default function Skills() {
     <section id="skills" className="py-20 bg-gradient-to-r from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center mb-8 text-gray-800 dark:text-white">
-        Programming Languages I'm Familiar With.
+          Programming Languages I'm Familiar With.
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="flex flex-wrap justify-center gap-4">
           {skillsList.map((skill, index) => (
             <motion.div
               key={`skill-${index}`}
-              className="flex flex-col items-center p-6 rounded-2xl shadow-lg 
+              className="flex flex-col items-center p-4 rounded-2xl shadow-lg 
                          bg-white dark:bg-gray-800 hover:bg-indigo-50 dark:hover:bg-gray-700 
-                         transition-colors duration-300 ease-in-out"
+                         transition-colors duration-300 ease-in-out w-20 sm:w-24"
               variants={skillVariants}
               initial="initial"
               animate="animate"
@@ -45,7 +45,7 @@ export default function Skills() {
               transition={skillVariants.transition}
             >
               {skill.icon}
-              <h3 className="mt-4 text-lg font-semibold text-gray-800 dark:text-white">
+              <h3 className="mt-2 text-sm font-semibold text-gray-800 dark:text-white">
                 {skill.title}
               </h3>
             </motion.div>
