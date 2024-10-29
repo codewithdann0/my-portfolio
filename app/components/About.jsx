@@ -11,23 +11,23 @@ export default function About() {
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-8 p-4 sm:p-8 border-4 border-gradient rounded-lg shadow-lg glow-border">
-        
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-center text-center md:text-left gap-8 p-8 border-4 border-gradient rounded-lg shadow-lg glow-border">
+
         {/* Image Container */}
         <div className="w-full md:w-1/3 flex justify-center">
           <img
             src="/dani.png"
             alt="My Image"
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 object-cover rounded-full"
+            className="w-64 h-64 sm:w-72 sm:h-72 object-contain rounded-full"
           />
         </div>
 
         {/* Text Container */}
-        <div className="w-full md:w-2/3 md:pl-8 flex flex-col justify-center">
+        <div className="w-full md:w-2/3 flex flex-col justify-center">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-4">
             ......../ About Me
           </h2>
-          <p className="text-sm sm:text-md lg:text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-sm sm:text-md lg:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             Hi! I'm Daniel Tigistu, a dedicated web developer specializing in creating responsive and user-friendly applications. 
             With a solid background in technologies like Laravel, Next.js, and Tailwind CSS, I provide tailored web solutions that meet your unique needs. 
             My passion lies in delivering high-quality work that not only satisfies clients but also contributes to their success. 

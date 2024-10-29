@@ -28,7 +28,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-white dark:bg-gray-900 shadow-md">
+    <nav className="fixed w-full top-0 z-50 bg-transparent shadow-md">
       <div className="max-w-7xl mx-auto px-6 sm:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Desktop & Center-Aligned Menu */}
@@ -78,7 +78,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <motion.div
-        className="md:hidden bg-white dark:bg-gray-900 overflow-hidden"
+        className="md:hidden bg-transparent overflow-hidden"
         initial="closed"
         animate={isOpen ? 'open' : 'closed'}
         variants={ulVariants}
