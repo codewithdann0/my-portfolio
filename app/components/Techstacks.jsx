@@ -17,19 +17,19 @@ const fadeInAnimation = {
 
 const TechStacks = () => {
   const techStack = [
-    { icon: <FaReact />, name: "React" },
-    { icon: <SiNextdotjs />, name: "Next.js" },
-    { icon: <SiFirebase />, name: "Firebase" },
-    { icon: <FaLaravel />, name: "Laravel" },
-    { icon: <FaDatabase />, name: "MySQL" },
-    { icon: <SiMongodb />, name: "MongoDB" },
-    { icon: <SiGraphql />, name: "GraphQL" },
-    { icon: <SiStripe />, name: "Stripe" },
-    { icon: <SiPaypal />, name: "PayPal" },
-    { icon: <FaGithub />, name: "GitHub" },
-    { icon: <FaReact />, name: "React Native" },
-    { icon: <SiRedux />, name: "Redux" },
-    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
+    { icon: <FaReact />, name: "React", color: "text-blue-500" },
+    { icon: <SiNextdotjs />, name: "Next.js", color: "text-black" },
+    { icon: <SiFirebase />, name: "Firebase", color: "text-yellow-500" },
+    { icon: <FaLaravel />, name: "Laravel", color: "text-red-600" },
+    { icon: <FaDatabase />, name: "MySQL", color: "text-blue-700" },
+    { icon: <SiMongodb />, name: "MongoDB", color: "text-green-600" },
+    { icon: <SiGraphql />, name: "GraphQL", color: "text-purple-600" },
+    { icon: <SiStripe />, name: "Stripe", color: "text-blue-600" },
+    { icon: <SiPaypal />, name: "PayPal", color: "text-blue-500" },
+    { icon: <FaGithub />, name: "GitHub", color: "text-gray-800" },
+    { icon: <FaReact />, name: "React Native", color: "text-blue-500" },
+    { icon: <SiRedux />, name: "Redux", color: "text purple-500" },
+    { icon: <SiTailwindcss />, name: "Tailwind CSS", color: "text-cyan-500" },
   ];
 
   return (
@@ -39,13 +39,13 @@ const TechStacks = () => {
         {techStack.map((tech, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center justify-center w-full h-40 rounded-lg bg-white shadow-lg dark:bg-gray-800 
-                      transition-transform transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,132,255,0.8)]"
+            className={`flex flex-col items-center justify-center w-full h-32 sm:h-40 rounded-lg bg-white shadow-lg dark:bg-gray-800 
+                      transition-transform transform hover:scale-110 hover:shadow-[0_0_20px_rgba(0,132,255,0.8)] ${tech.color}`}
             initial="hidden"
             animate="visible"
             variants={fadeInAnimation}
           >
-            <div className="text-6xl text-blue-500 mb-2">{tech.icon}</div>
+            <div className={`text-4xl sm:text-6xl mb-2 ${tech.color}`}>{tech.icon}</div>
             <span className="text-lg font-medium text-gray-600 dark:text-gray-300">
               {tech.name}
             </span>
