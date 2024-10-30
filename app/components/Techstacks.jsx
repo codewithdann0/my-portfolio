@@ -45,7 +45,7 @@ const TechStacks = () => {
             animate="visible"
             variants={fadeInAnimation}
           >
-            <div className={`text-4xl  w-10 sm:text-6xl mb-2 ${tech.color}`}>{tech.icon}</div>
+            <div className={`text-4xl sm:text-6xl mb-2 ${tech.color}`}>{tech.icon}</div>
             <span className="text-lg font-medium text-gray-600 dark:text-gray-300">
               {tech.name}
             </span>

@@ -25,7 +25,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-gradient-to-r from-gray-100 to-gray-300 dark:from-gray-800 dark:to-gray-900">
+    <section id="skills" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-4xl font-bold text-center mb-8 text-gray-800 dark:text-white">
           Programming Languages I'm Familiar With.

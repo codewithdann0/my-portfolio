@@ -12,7 +12,7 @@ const fadeInAnimation = {
 
 const Hero = () => {
   return (
-    <section className="h-[95vh] bg-gradient-to-br from-gray-100 to-gray-300 dark:from-gray-900 dark:to-gray-700 relative">
+    <section className="h-[85vh] bg-gradient-to-br bg-white dark:bg-gray-900">
       <div className="flex flex-col items-center justify-center h-full w-full px-4 sm:px-6 md:px-10 text-center gap-8">
 
         {/* Icon with Glow and Typewriter Effect */}
