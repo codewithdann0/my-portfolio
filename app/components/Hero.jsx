@@ -51,13 +51,13 @@ const Hero = () => {
           variants={fadeInAnimation}
         >
           <Link href="/resume.pdf" target="_blank" download>
-            <button className="w-40 sm:w-auto px-4 sm:px-6 py-2 sm:py-3 font-semibold rounded-lg shadow-md transition-all duration-300 glow-button gradient-button">
+            <button className="w-40 sm:w-auto px-4 sm:px-6 py-2 sm:py-3 font-semibold rounded-lg shadow-md transition-all duration-300 glow-button gradient-button sm:text-xs">
               Download Resume
             </button>
           </Link>
 
           <Link href="https://www.linkedin.com/in/https:/daniel-tigistu-918a63314/messages/">
-            <button className="w-40 sm:w-auto px-4 sm:px-6 py-2 sm:py-3 font-semibold rounded-lg shadow-md transition-all duration-300 glow-button gradient-button">
+            <button className="w-40 sm:w-auto px-4 sm:px-6 py-2 sm:py-3 font-semibold rounded-lg shadow-md transition-all duration-300 glow-button gradient-button sm:text-xs">
               Hire Me
             </button>
           </Link>
