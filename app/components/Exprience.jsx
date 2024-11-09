@@ -41,16 +41,16 @@ const Experience = () => {
                 {exp.icon}
               </span>
               <div className="bg-gray-900 dark:bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+                <h3 className="text-2xl font-semibold text-white dark:text-gray-900">
                   {exp.title}
                 </h3>
-                <h4 className="text-lg text-blue-500 dark:text-blue-400 mt-1">
+                <h4 className="text-lg text-blue-400 dark:text-blue-600 mt-1">
                   {exp.company}
                 </h4>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                <p className="text-sm text-gray-300 dark:text-gray-700 mt-1">
                   {exp.duration}
                 </p>
-                <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="mt-3 text-gray-200 dark:text-gray-800 leading-relaxed">
                   {exp.description}
                 </p>
               </div>
@@ -63,16 +63,16 @@ const Experience = () => {
               <FaGraduationCap className="text-4xl text-blue-500" />
             </span>
             <div className="bg-gray-900 dark:bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+              <h3 className="text-2xl font-semibold text-white dark:text-gray-900">
                 Software Engineering
               </h3>
-              <h4 className="text-lg text-blue-500 dark:text-blue-400 mt-1">
+              <h4 className="text-lg text-blue-400 dark:text-blue-600 mt-1">
                 Haramaya University
               </h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              <p className="text-sm text-gray-300 dark:text-gray-700 mt-1">
                 Expected Graduation: 2027
               </p>
-              <p className="mt-3 text-gray-600 dark:text-gray-300 leading-relaxed">
+              <p className="mt-3 text-gray-200 dark:text-gray-800 leading-relaxed">
                 Currently pursuing a degree in Software Engineering, gaining skills in programming, web development, and software design.
               </p>
             </div>
