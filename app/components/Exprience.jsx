@@ -40,7 +40,7 @@ const Experience = () => {
               <span className="absolute -left-5 flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-gray-700 text-white rounded-full group-hover:scale-110 transition-transform">
                 {exp.icon}
               </span>
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-gray-900 dark:bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
                   {exp.title}
                 </h3>
@@ -62,7 +62,7 @@ const Experience = () => {
             <span className="absolute -left-5 flex items-center justify-center w-10 h-10 bg-gray-200 dark:bg-gray-700 text-white rounded-full group-hover:scale-110 transition-transform">
               <FaGraduationCap className="text-4xl text-blue-500" />
             </span>
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+            <div className="bg-gray-900 dark:bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
                 Software Engineering
               </h3>
