@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { MdOutlineArrowOutward } from 'react-icons/md';
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import ThemeToggle from './ThemeToggle';
 import { motion, useMotionValue, animate, stagger } from 'framer-motion';
 import Link from 'next/link';
@@ -40,7 +40,7 @@ export default function Navbar() {
                 className="relative flex items-center text-lg font-semibold text-gray-800 dark:text-white hover:text-blue-600 transition duration-300"
               >
                 <span>{item}</span>
-                <MdOutlineArrowOutward className="ml-1 text-xl" />
+                <FaArrowAltCircleRight className="ml-1 text-xxl" />
                 <div className="absolute inset-0 bg-blue-100 dark:bg-gray-800 rounded-full scale-0 hover:scale-100 transition-transform duration-300 ease-in-out -z-1" />
               </Link>
             ))}

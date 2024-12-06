@@ -64,7 +64,7 @@ const Experience = () => {
             </span>
             <div className="bg-gray-900 dark:bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
               <h3 className="text-2xl font-semibold text-white dark:text-gray-900">
-                Software Engineering
+                SOFTWARE ENGINEERING
               </h3>
               <h4 className="text-lg text-blue-400 dark:text-blue-600 mt-1">
                 Haramaya University

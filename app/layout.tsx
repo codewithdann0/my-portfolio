@@ -50,7 +50,7 @@ export default function RootLayout({
         <About/>
         <Techstacks/>
         <Skills />
-        <Projects/>
+       
         <Exprience/>
         <Services/>
         <Footer/>
